@@ -1,0 +1,5 @@
+Using Sandcastle to extract information about the project and to document it
+- https://blogs.msdn.microsoft.com/msgulfcommunity/2014/04/22/creating-documentation-in-c-using-visual-studio-and-sandcastle/
+Troubleshooting binding redirects issues on build
+-http://stackoverflow.com/questions/29204603/unresolved-assembly-reference-with-sandcastle
+
