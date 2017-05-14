@@ -1,0 +1,1 @@
+Blog.UI.Tests.UITests.RegisterWithoutFullName        D:\Programming C#\SoftUni-QA-Blog-master\SoftUni-QA-Blog-master\Blog-Skeleton\Blog.UI.Tests\bin\Debug            0
