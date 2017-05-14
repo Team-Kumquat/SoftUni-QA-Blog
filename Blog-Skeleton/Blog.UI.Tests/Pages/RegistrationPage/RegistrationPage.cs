@@ -30,7 +30,11 @@ namespace Blog.UI.Tests.Pages.RegistrationPage
         private void Type(IWebElement element, string text)
         {
             element.Clear();
-            element.SendKeys(text);
+
+            if (!text.Equals("String.Empty"))
+            {
+                element.SendKeys(text);
+            }
         }
     }
 }
