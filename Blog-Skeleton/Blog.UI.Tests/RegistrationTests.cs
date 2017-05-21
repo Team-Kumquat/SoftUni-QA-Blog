@@ -10,7 +10,7 @@ using Blog.UI.Tests.Models;
 namespace Blog.UI.Tests
 {
     [TestFixture]
-    public class UITests
+    public class RegistrationTests
     {
 
         public IWebDriver driver;

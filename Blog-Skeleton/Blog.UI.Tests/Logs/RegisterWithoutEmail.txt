@@ -1,1 +1,0 @@
-Blog.UI.Tests.UITests.RegisterWithoutEmail        D:\Programming C#\SoftUni-QA-Blog-master\SoftUni-QA-Blog-master\Blog-Skeleton\Blog.UI.Tests\bin\Debug            0
