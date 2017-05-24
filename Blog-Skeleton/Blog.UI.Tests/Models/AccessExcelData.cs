@@ -20,13 +20,25 @@ namespace Blog.UI.Tests.Models
             return con;
         }
 
-        public static User GetTestData(string keyName)
+        public static User GetUserTestData(string keyName)
         {
             using (var connection = new OleDbConnection(TestDataFileConnection()))
             {
                 connection.Open();
-                var query = string.Format("select * from [DataSet$] where key = '{0}'", keyName);
+                var query = string.Format("select * from [UserDataSet$] where key = '{0}'", keyName);
                 var value = connection.Query<User>(query).FirstOrDefault();
+                connection.Close();
+                return value;
+            }
+        }
+
+        public static Post GetPostTestData(string keyName)
+        {
+            using (var connection = new OleDbConnection(TestDataFileConnection()))
+            {
+                connection.Open();
+                var query = string.Format("select * from [PostDataSet$] where key = '{0}'", keyName);
+                var value = connection.Query<Post>(query).FirstOrDefault();
                 connection.Close();
                 return value;
             }

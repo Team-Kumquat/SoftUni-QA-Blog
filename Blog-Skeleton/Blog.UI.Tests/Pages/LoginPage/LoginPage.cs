@@ -25,6 +25,11 @@ namespace Blog.UI.Tests.Pages.LoginPage
         }
 
 
+        public void Logout()
+        {
+            this.LogoutButton.Click();
+        }
+
 
         private void Type(IWebElement element, string text)
         {

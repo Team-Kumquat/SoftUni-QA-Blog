@@ -47,7 +47,7 @@ namespace Blog.UI.Tests
         public void LoginWithoutEmail()
         {
             var logPage = new LoginPage(this.driver);
-            User user = AccessExcelData.GetTestData("LoginWithoutEmail");
+            User user = AccessExcelData.GetUserTestData("LoginWithoutEmail");
 
             logPage.NavigateTo();
             logPage.FillLoginForm(user);
@@ -59,7 +59,7 @@ namespace Blog.UI.Tests
         public void LoginWithoutPassword()
         {
             var logPage = new LoginPage(this.driver);
-            User user = AccessExcelData.GetTestData("LoginWithoutPassword");
+            User user = AccessExcelData.GetUserTestData("LoginWithoutPassword");
 
             logPage.NavigateTo();
             logPage.FillLoginForm(user);
@@ -71,7 +71,7 @@ namespace Blog.UI.Tests
         public void LoginWithInvalidUser()
         {
             var logPage = new LoginPage(this.driver);
-            User user = AccessExcelData.GetTestData("LoginWithInvalidUser");
+            User user = AccessExcelData.GetUserTestData("LoginWithInvalidUser");
 
             logPage.NavigateTo();
             logPage.FillLoginForm(user);
@@ -83,7 +83,7 @@ namespace Blog.UI.Tests
         public void LoginWithInvalidEmail()
         {
             var logPage = new LoginPage(this.driver);
-            User user = AccessExcelData.GetTestData("LoginWithInvalidEmail");
+            User user = AccessExcelData.GetUserTestData("LoginWithInvalidEmail");
 
             logPage.NavigateTo();
             logPage.FillLoginForm(user);
@@ -95,12 +95,26 @@ namespace Blog.UI.Tests
         public void SuccessfullLoginAsAdmin()
         {
             var logPage = new LoginPage(this.driver);
-            User user = AccessExcelData.GetTestData("LoginAsAdmin");
+            User user = AccessExcelData.GetUserTestData("LoginAsAdmin");
 
             logPage.NavigateTo();
             logPage.FillLoginForm(user);
 
             logPage.AssertSuccessLoginMessage("Hello admin@admin.com!");
+        }
+
+        [Test]
+        public void SuccessfullLogout()
+        {
+            var logPage = new LoginPage(this.driver);
+            User user = AccessExcelData.GetUserTestData("LoginAsAdmin");
+
+            logPage.NavigateTo();
+            logPage.FillLoginForm(user);
+
+            logPage.Logout();
+
+            logPage.AssertSuccessfullLogout();
         }
 
     }

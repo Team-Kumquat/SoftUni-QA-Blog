@@ -47,7 +47,7 @@ namespace Blog.UI.Tests
         public void RegisterWithoutFullName()
         {
             var regPage = new RegistrationPage(this.driver);
-            User user = AccessExcelData.GetTestData("RegisterWithoutFullName");
+            User user = AccessExcelData.GetUserTestData("RegisterWithoutFullName");
 
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);
@@ -59,7 +59,7 @@ namespace Blog.UI.Tests
         public void RegisterWithoutEmail()
         {
             var regPage = new RegistrationPage(this.driver);
-            User user = AccessExcelData.GetTestData("RegisterWithoutEmail");
+            User user = AccessExcelData.GetUserTestData("RegisterWithoutEmail");
 
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);
@@ -71,7 +71,7 @@ namespace Blog.UI.Tests
         public void RegisterWithoutPassword()
         {
             var regPage = new RegistrationPage(this.driver);
-            User user = AccessExcelData.GetTestData("RegisterWithoutPassword");
+            User user = AccessExcelData.GetUserTestData("RegisterWithoutPassword");
 
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);
@@ -83,7 +83,7 @@ namespace Blog.UI.Tests
         public void PasswordsDontMatch()
         {
             var regPage = new RegistrationPage(this.driver);
-            User user = AccessExcelData.GetTestData("PasswordsDontMatch");
+            User user = AccessExcelData.GetUserTestData("PasswordsDontMatch");
 
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);
@@ -95,7 +95,7 @@ namespace Blog.UI.Tests
         public void RegisterWithInvalidEmail()
         {
             var regPage = new RegistrationPage(this.driver);
-            User user = AccessExcelData.GetTestData("RegisterWithInvalidEmail");
+            User user = AccessExcelData.GetUserTestData("RegisterWithInvalidEmail");
 
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);

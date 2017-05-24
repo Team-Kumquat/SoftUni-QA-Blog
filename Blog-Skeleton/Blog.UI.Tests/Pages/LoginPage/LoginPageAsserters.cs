@@ -16,6 +16,11 @@ namespace Blog.UI.Tests.Pages.LoginPage
             Assert.AreEqual(text, page.SuccessLoginMessage.Text);
         }
 
+        public static void AssertSuccessfullLogout(this LoginPage page)
+        {
+            Assert.IsTrue(page.Login.Displayed);
+        }
+
         public static void AssertErrorMessageForEmail(this LoginPage page, string text)
         {
             Assert.IsTrue(page.ErrorMessageForEmail.Displayed);

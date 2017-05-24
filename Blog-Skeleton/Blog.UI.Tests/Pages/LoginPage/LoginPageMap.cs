@@ -44,6 +44,23 @@ namespace Blog.UI.Tests.Pages.LoginPage
             }
         }
 
+        public IWebElement Login
+        {
+            get
+            {
+                return this.Driver.FindElement(By.Id("loginLink"));
+            }
+        }
+
+        public IWebElement LogoutButton
+        {
+            get
+            {
+                return this.Driver.FindElement(By.XPath("//*[@id=\"logoutForm\"]/ul/li[4]/a"));
+            }
+        }
+
+
         public IWebElement SuccessLoginMessage
         {
             get
