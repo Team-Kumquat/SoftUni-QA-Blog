@@ -55,17 +55,17 @@ namespace Blog.UI.Tests
             logPage.AssertErrorMessageForEmail("The Email field is required.");
         }
 
-        [Test]
-        public void LoginWithoutPassword()
-        {
-            var logPage = new LoginPage(this.driver);
-            User user = AccessExcelData.GetUserTestData("LoginWithoutPassword");
+        //[Test]
+        //public void LoginWithoutPassword()
+        //{
+        //    var logPage = new LoginPage(this.driver);
+        //    User user = AccessExcelData.GetUserTestData("LoginWithoutPassword");
 
-            logPage.NavigateTo();
-            logPage.FillLoginForm(user);
+        //    logPage.NavigateTo();
+        //    logPage.FillLoginForm(user);
 
-            logPage.AssertErrorMessageEmptyPassword("The Password field is required.");
-        }
+        //    logPage.AssertErrorMessageEmptyPassword("The Password field is required.");
+        //}
 
         [Test]
         public void LoginWithInvalidUser()

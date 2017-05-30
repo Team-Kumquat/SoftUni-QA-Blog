@@ -37,7 +37,7 @@ namespace Blog.UI.Tests.Pages.PostPage
         {
             get
             {
-                return this.Driver.FindElement(By.XPath("/html/body/div[2]/div/div/div[5]/article/header/h2/a"));
+                return this.Driver.FindElement(By.ClassName("container"));
             }
         }
 

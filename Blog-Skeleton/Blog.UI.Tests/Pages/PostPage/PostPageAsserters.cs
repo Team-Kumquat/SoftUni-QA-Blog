@@ -4,10 +4,9 @@ namespace Blog.UI.Tests.Pages.PostPage
 {
     public static class PostPageAsserter
     {
-        public static void AssertPostAdded(this PostPage page, string text)
+        public static void AssertPostAdded(this PostPage page)
         {
             Assert.IsTrue(page.PostAdded.Displayed);
-            Assert.AreEqual(text, page.PostAdded.Text);
         }
 
         public static void AssertErrorMessage(this PostPage page, string text)

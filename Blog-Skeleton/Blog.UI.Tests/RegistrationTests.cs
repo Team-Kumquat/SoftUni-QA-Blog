@@ -67,17 +67,17 @@ namespace Blog.UI.Tests
             regPage.AssertErrorMessage("The Email field is required.");
         }
 
-        [Test]
-        public void RegisterWithoutPassword()
-        {
-            var regPage = new RegistrationPage(this.driver);
-            User user = AccessExcelData.GetUserTestData("RegisterWithoutPassword");
+        //[Test]
+        //public void RegisterWithoutPassword()
+        //{
+        //    var regPage = new RegistrationPage(this.driver);
+        //    User user = AccessExcelData.GetUserTestData("RegisterWithoutPassword");
 
-            regPage.NavigateTo();
-            regPage.FillRegistrationForm(user);
+        //    regPage.NavigateTo();
+        //    regPage.FillRegistrationForm(user);
 
-            regPage.AssertErrorMessage("The Password field is required.");
-        }
+        //    regPage.AssertErrorMessage("The Password field is required.");
+        //}
 
         [Test]
         public void PasswordsDontMatch()

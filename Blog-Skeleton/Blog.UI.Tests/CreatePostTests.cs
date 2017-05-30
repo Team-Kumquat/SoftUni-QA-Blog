@@ -76,6 +76,18 @@ namespace Blog.UI.Tests
         }
 
 
+        [Test]
+        public void CreatePostSuccessfully()
+        {
+            var postPage = new PostPage(this.driver);
+            Post post = AccessExcelData.GetPostTestData("CreatePostSuccessfully");
+
+            postPage.NavigateTo();
+            postPage.FillPostForm(post);
+
+            postPage.AssertPostAdded();
+        }
+
 
     }
 }
