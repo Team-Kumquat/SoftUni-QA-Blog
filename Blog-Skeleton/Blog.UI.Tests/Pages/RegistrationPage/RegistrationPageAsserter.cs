@@ -27,6 +27,12 @@ namespace Blog.UI.Tests.Pages.RegistrationPage
             StringAssert.Contains(text, page.ErrorMessages.Text);
         }
 
-       
+
+        public static void AssertErrorMessageConfPassword(this RegistrationPage page, string text)
+        {
+            Assert.IsTrue(page.ErrorMessagesComfPassword.Displayed);
+            StringAssert.Contains(text, page.ErrorMessagesComfPassword.Text);
+        }
+
     }
 }

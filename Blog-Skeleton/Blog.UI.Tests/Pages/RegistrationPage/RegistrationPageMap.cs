@@ -76,11 +76,19 @@ namespace Blog.UI.Tests.Pages.RegistrationPage
         public IWebElement ErrorMessages
         {
             get
-            {
+            {                                                       
                 this.Wait.Until(ExpectedConditions.ElementExists(By.XPath("/html/body/div[2]/div/div/form/div[1]")));
                 return this.Driver.FindElement(By.XPath("/html/body/div[2]/div/div/form/div[1]"));
             }
         }
-        
+
+        public IWebElement ErrorMessagesComfPassword
+        {
+            get
+            {                                                        
+                this.Wait.Until(ExpectedConditions.ElementExists(By.XPath(" /html/body/div[2]/div/div/form/div[1]/ul/li")));
+                return this.Driver.FindElement(By.XPath(" /html/body/div[2]/div/div/form/div[1]/ul/li"));
+            }
+        }
     }
 }

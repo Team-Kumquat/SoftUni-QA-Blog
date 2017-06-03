@@ -79,6 +79,19 @@ namespace Blog.UI.Tests
         //    regPage.AssertErrorMessage("The Password field is required.");
         //}
 
+       [Test]
+       public void RegisterWithoutConfirmPassword()
+       {
+           var regPage = new RegistrationPage(this.driver);
+           User user = AccessExcelData.GetUserTestData("RegisterWithoutConfirmPassword");
+
+           regPage.NavigateTo();
+           regPage.FillRegistrationForm(user);
+
+           regPage.AssertErrorMessageConfPassword("The password and confirmation password do not match.");
+       }
+
+
         [Test]
         public void PasswordsDontMatch()
         {
