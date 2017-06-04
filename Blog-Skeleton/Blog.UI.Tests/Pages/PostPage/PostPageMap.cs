@@ -33,6 +33,24 @@ namespace Blog.UI.Tests.Pages.PostPage
             }
         }
 
+        
+             public IWebElement DeleteButton
+        {
+            get
+            {
+                return this.Driver.FindElement(By.XPath("/html/body/div[2]/div/article/footer/a[2]"));
+            }
+        }
+
+        public IWebElement DeleteArticleButton
+        {
+            get
+            {
+               
+                return this.Driver.FindElement(By.XPath("/html/body/div[2]/div/div/form/div[3]/div/input"));
+            }
+        }
+
         public IWebElement PostAdded
         {
             get

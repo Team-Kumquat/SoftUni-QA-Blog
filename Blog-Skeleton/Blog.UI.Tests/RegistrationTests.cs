@@ -80,6 +80,7 @@ namespace Blog.UI.Tests
         //}
 
        [Test]
+       [Author("Tsveta Getova")]
        public void RegisterWithoutConfirmPassword()
        {
            var regPage = new RegistrationPage(this.driver);

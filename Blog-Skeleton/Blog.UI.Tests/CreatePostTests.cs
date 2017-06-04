@@ -88,6 +88,20 @@ namespace Blog.UI.Tests
             postPage.AssertPostAdded();
         }
 
+        [Test]
+        [Author("Rossen Dimov")]
+        public void DeletePostSuccessfully()
+        {
+            var postPage = new PostPage(this.driver);
+            
 
+            postPage.NavigateToDelete();
+            postPage.DeletePost();
+            postPage.DeleteArticlePost();
+
+
+
+            postPage.AssertPostAdded();
+        }
     }
 }

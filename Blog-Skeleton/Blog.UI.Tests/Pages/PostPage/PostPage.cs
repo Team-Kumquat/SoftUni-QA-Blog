@@ -23,7 +23,15 @@ namespace Blog.UI.Tests.Pages.PostPage
             this.CreatePostButton.Click();
         }
 
+        public void DeletePost()
+        {
+            this.DeleteButton.Click();
+        }
 
+        public void DeleteArticlePost()
+        {
+            DeleteArticleButton.Click();
+        }
 
         private void Type(IWebElement element, string text)
         {
@@ -33,6 +41,11 @@ namespace Blog.UI.Tests.Pages.PostPage
             {
                 element.SendKeys(text);
             }
+        }
+
+        public void NavigateToDelete()
+        {
+            this.Driver.Navigate().GoToUrl("http://localhost:60634/Article/Details/8");
         }
     }
 }
