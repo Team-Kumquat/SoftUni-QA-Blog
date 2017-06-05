@@ -43,9 +43,9 @@ namespace Blog.UI.Tests.Pages.PostPage
             }
         }
 
-        public void NavigateToDelete()
+        public void NavigateToNewPost()
         {
-            this.Driver.Navigate().GoToUrl("http://localhost:60634/Article/Details/8");
+            NewPost.Click();
         }
     }
 }

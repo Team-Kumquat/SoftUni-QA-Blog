@@ -95,7 +95,7 @@ namespace Blog.UI.Tests
             var postPage = new PostPage(this.driver);
             
 
-            postPage.NavigateToDelete();
+            postPage.NavigateToNewPost();
             postPage.DeletePost();
             postPage.DeleteArticlePost();
 
