@@ -103,5 +103,42 @@ namespace Blog.UI.Tests
 
             postPage.AssertPostAdded();
         }
+
+        [Test]
+        [Author("Tsveta Getova")]
+        public void EditNewPostTitle()
+        {
+            var postPage = new PostPage(this.driver);
+            Post post = AccessExcelData.GetPostTestData("EditNewPostTitle");
+
+
+            postPage.NavigateToNewPost();
+            postPage.EditPost();
+            postPage.EditPostTitle(post);
+            postPage.EditArticlePost();
+
+
+
+            postPage.AssertPostAdded();
+        }
+
+        [Test]
+        [Author("Tsveta Getova")]
+        public void EditNewPostContent()
+        {
+            var postPage = new PostPage(this.driver);
+            Post post = AccessExcelData.GetPostTestData("EditNewPostContent");
+
+
+            postPage.NavigateToNewPost();
+            postPage.EditPost();
+            postPage.EditPostFormContent(post);
+            postPage.EditArticlePost();
+
+
+
+
+            postPage.AssertPostAdded();
+        }
     }
 }
