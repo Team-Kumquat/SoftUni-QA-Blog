@@ -122,5 +122,30 @@ namespace Blog.UI.Tests
             regPage.AssertErrorMessage("The Email field is not a valid e-mail address.");
         }
 
+        //[Test]
+        //[Property("Register", 1)]
+        //public void RegisterWithFullNameWithNumbers()
+        //{
+        //    var regPage = new RegistrationPage(this.driver);
+        //    User user = AccessExcelData.GetUserTestData("RegisterWithFullNameWithNumbers");
+        //
+        //    regPage.NavigateTo();
+        //    regPage.FillRegistrationForm(user);
+        //
+        //    regPage.AssertSuccessMessage("Hello cvety@abv.bg!");
+        //}
+
+        [Test]
+        [Property("Register", 1)]
+        public void RegisterWithLongFullName()
+        {
+            var regPage = new RegistrationPage(this.driver);
+            User user = AccessExcelData.GetUserTestData("RegisterWithLongFullName");
+
+            regPage.NavigateTo();
+            regPage.FillRegistrationForm(user);
+
+            regPage.AssertErrorMessage("The field Full Name must be a string with a maximum length of 50.");
+        }
     }
 }

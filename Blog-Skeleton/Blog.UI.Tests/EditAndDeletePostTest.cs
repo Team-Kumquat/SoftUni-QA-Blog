@@ -52,7 +52,7 @@ namespace Blog.UI.Tests
         }
 
         [Test]
-        [Property("EditPost", 3)]
+        [Property("EditPost", 4)]
         public void EditNewPostTitle()
         {
             var postPage = new PostPage(this.driver);
@@ -68,7 +68,7 @@ namespace Blog.UI.Tests
         }
 
         [Test]
-        [Property("EditPost", 3)]
+        [Property("EditPost", 4)]
         public void EditNewPostContent()
         {
             var postPage = new PostPage(this.driver);
@@ -84,7 +84,7 @@ namespace Blog.UI.Tests
         }
 
         [Test]
-        [Property("DeletePost", 4)]
+        [Property("DeletePost", 5)]
         public void DeletePostSuccessfully()
         {
             var postPage = new PostPage(this.driver);
