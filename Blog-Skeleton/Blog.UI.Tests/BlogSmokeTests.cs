@@ -7,6 +7,7 @@ namespace Blog.UI.Tests
     public class BlogSmokeTests
     {
         [Test]
+
         public void BlogLogoDisplayedRightMessage()
         {
             var homePage = new HomePage(BrowserHost.Instance.Application.Browser);

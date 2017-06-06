@@ -44,6 +44,7 @@ namespace Blog.UI.Tests
 
 
         [Test]
+        [Property("Login", 2)]
         public void LoginWithoutEmail()
         {
             var logPage = new LoginPage(this.driver);
@@ -56,6 +57,7 @@ namespace Blog.UI.Tests
         }
 
         //[Test]
+        //[Property("Login", 2)]
         //public void LoginWithoutPassword()
         //{
         //    var logPage = new LoginPage(this.driver);
@@ -68,6 +70,7 @@ namespace Blog.UI.Tests
         //}
 
         [Test]
+        [Property("Login", 2)]
         public void LoginWithInvalidUser()
         {
             var logPage = new LoginPage(this.driver);
@@ -80,6 +83,7 @@ namespace Blog.UI.Tests
         }
 
         [Test]
+        [Property("Login", 2)]
         public void LoginWithInvalidEmail()
         {
             var logPage = new LoginPage(this.driver);
@@ -92,6 +96,7 @@ namespace Blog.UI.Tests
         }
 
         [Test]
+        [Property("Login", 2)]
         public void SuccessfullLoginAsAdmin()
         {
             var logPage = new LoginPage(this.driver);
@@ -104,6 +109,7 @@ namespace Blog.UI.Tests
         }
 
         [Test]
+        [Property("Login", 2)]
         public void SuccessfullLogout()
         {
             var logPage = new LoginPage(this.driver);

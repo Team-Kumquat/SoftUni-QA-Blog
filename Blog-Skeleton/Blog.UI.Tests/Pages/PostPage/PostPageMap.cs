@@ -23,8 +23,6 @@ namespace Blog.UI.Tests.Pages.PostPage
             }
         }
 
-
-
         public IWebElement CreatePostButton
         {
             get

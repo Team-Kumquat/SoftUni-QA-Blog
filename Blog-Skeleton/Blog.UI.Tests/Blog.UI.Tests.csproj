@@ -147,6 +147,7 @@
     <Compile Include="BlogSmokeTests.cs" />
     <Compile Include="BrowserHost.cs" />
     <Compile Include="CreatePostTests.cs" />
+    <Compile Include="EditAndDeletePostTest.cs" />
     <Compile Include="Models\AccessExcelData.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\User.cs" />

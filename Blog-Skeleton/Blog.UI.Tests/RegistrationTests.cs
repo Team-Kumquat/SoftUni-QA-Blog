@@ -44,6 +44,7 @@ namespace Blog.UI.Tests
 
 
         [Test]
+        [Property("Register", 1)]
         public void RegisterWithoutFullName()
         {
             var regPage = new RegistrationPage(this.driver);
@@ -56,6 +57,7 @@ namespace Blog.UI.Tests
         }
 
         [Test]
+        [Property("Register", 1)]
         public void RegisterWithoutEmail()
         {
             var regPage = new RegistrationPage(this.driver);
@@ -68,6 +70,7 @@ namespace Blog.UI.Tests
         }
 
         //[Test]
+        //[Property("Register", 1)]
         //public void RegisterWithoutPassword()
         //{
         //    var regPage = new RegistrationPage(this.driver);
@@ -79,9 +82,9 @@ namespace Blog.UI.Tests
         //    regPage.AssertErrorMessage("The Password field is required.");
         //}
 
-       [Test]
-       [Author("Tsveta Getova")]
-       public void RegisterWithoutConfirmPassword()
+        [Test]
+        [Property("Register", 1)]
+        public void RegisterWithoutConfirmPassword()
        {
            var regPage = new RegistrationPage(this.driver);
            User user = AccessExcelData.GetUserTestData("RegisterWithoutConfirmPassword");
@@ -94,6 +97,7 @@ namespace Blog.UI.Tests
 
 
         [Test]
+        [Property("Register", 1)]
         public void PasswordsDontMatch()
         {
             var regPage = new RegistrationPage(this.driver);
@@ -106,6 +110,7 @@ namespace Blog.UI.Tests
         }
 
         [Test]
+        [Property("Register", 1)]
         public void RegisterWithInvalidEmail()
         {
             var regPage = new RegistrationPage(this.driver);

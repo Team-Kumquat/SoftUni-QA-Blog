@@ -10,10 +10,8 @@ using Blog.UI.Tests.Pages.LoginPage;
 
 namespace Blog.UI.Tests
 {
-    [TestFixture]
-    public class CreatePostTests
+    class EditAndDeletePostTest
     {
-
         public IWebDriver driver;
 
         [SetUp]
@@ -22,10 +20,14 @@ namespace Blog.UI.Tests
             this.driver = new ChromeDriver();
 
             var logPage = new LoginPage(this.driver);
+            var postPage = new PostPage(this.driver);
             User user = AccessExcelData.GetUserTestData("LoginAsAdmin");
+            Post post = AccessExcelData.GetPostTestData("CreatePostSuccessfully");
 
             logPage.NavigateTo();
             logPage.FillLoginForm(user);
+            postPage.NavigateTo();
+            postPage.FillPostForm(post);
         }
 
 
@@ -49,48 +51,52 @@ namespace Blog.UI.Tests
 
         }
 
-
         [Test]
-        [Property("CreatePost", 3)]
-        public void CreatePostWithoutTitle()
+        [Property("EditPost", 3)]
+        public void EditNewPostTitle()
         {
             var postPage = new PostPage(this.driver);
-            Post post = AccessExcelData.GetPostTestData("CreatePostWithoutTitle");
-
-            postPage.NavigateTo();
-            postPage.FillPostForm(post);
-
-            postPage.AssertErrorMessage("The Title field is required.");
-        }
+            Post post = AccessExcelData.GetPostTestData("EditNewPostTitle");
 
 
-        [Test]
-        [Property("CreatePost", 3)]
-        public void CreatePostWithoutContent()
-        {
-            var postPage = new PostPage(this.driver);
-            Post post = AccessExcelData.GetPostTestData("CreatePostWithoutContent");
-
-            postPage.NavigateTo();
-            postPage.FillPostForm(post);
-
-            postPage.AssertErrorMessage("The Content field is required.");
-        }
-
-
-        [Test]
-        [Property("CreatePost", 3)]
-        public void CreatePostSuccessfully()
-        {
-            var postPage = new PostPage(this.driver);
-            Post post = AccessExcelData.GetPostTestData("CreatePostSuccessfully");
-
-            postPage.NavigateTo();
-            postPage.FillPostForm(post);
+            postPage.NavigateToNewPost();
+            postPage.EditPost();
+            postPage.EditPostTitle(post);
+            postPage.EditArticlePost();
 
             postPage.AssertPostAdded();
         }
 
-       
+        [Test]
+        [Property("EditPost", 3)]
+        public void EditNewPostContent()
+        {
+            var postPage = new PostPage(this.driver);
+            Post post = AccessExcelData.GetPostTestData("EditNewPostContent");
+
+
+            postPage.NavigateToNewPost();
+            postPage.EditPost();
+            postPage.EditPostFormContent(post);
+            postPage.EditArticlePost();
+
+            postPage.AssertPostAdded();
+        }
+
+        [Test]
+        [Property("DeletePost", 4)]
+        public void DeletePostSuccessfully()
+        {
+            var postPage = new PostPage(this.driver);
+
+
+            postPage.NavigateToNewPost();
+            postPage.DeletePost();
+            postPage.DeleteArticlePost();
+
+
+
+            postPage.AssertPostAdded();
+        }
     }
 }
