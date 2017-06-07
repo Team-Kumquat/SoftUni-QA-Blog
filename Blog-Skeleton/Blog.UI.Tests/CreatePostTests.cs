@@ -91,6 +91,17 @@ namespace Blog.UI.Tests
             postPage.AssertPostAdded();
         }
 
-       
+        [Test]
+        [Property("CreatePost", 3)]
+        public void CreatePostWithLongTitle()
+        {
+            var postPage = new PostPage(this.driver);
+            Post post = AccessExcelData.GetPostTestData("CreatePostWithLongTitle");
+
+            postPage.NavigateTo();
+            postPage.FillPostForm(post);
+
+            postPage.AssertErrorMessage("The field Title must be a string with a maximum length of 50.");
+        }
     }
 }
