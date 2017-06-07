@@ -132,6 +132,19 @@ namespace Blog.UI.Tests
         //    regPage.NavigateTo();
         //    regPage.FillRegistrationForm(user);
         //
+        //    regPage.AssertSuccessMessage("Hello 123@abv.bg!");
+        //}
+        //
+        //[Test]
+        //[Property("Register", 1)]
+        //public void RegisterSuccessfull()
+        //{
+        //    var regPage = new RegistrationPage(this.driver);
+        //    User user = AccessExcelData.GetUserTestData("RegisterSuccessfull");
+        //
+        //    regPage.NavigateTo();
+        //    regPage.FillRegistrationForm(user);
+        //
         //    regPage.AssertSuccessMessage("Hello cvety@abv.bg!");
         //}
 

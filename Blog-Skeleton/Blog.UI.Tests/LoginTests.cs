@@ -108,6 +108,19 @@ namespace Blog.UI.Tests
             logPage.AssertSuccessLoginMessage("Hello admin@admin.com!");
         }
 
+        //[Test]
+        //[Property("Login", 2)]
+        //public void LoginUserSuccessfull()
+        //{
+        //    var logPage = new LoginPage(this.driver);
+        //    User user = AccessExcelData.GetUserTestData("LoginUserSuccessfull");
+        //
+        //    logPage.NavigateTo();
+        //    logPage.FillLoginForm(user);
+        //
+        //    logPage.AssertSuccessLoginMessage("Hello cvety@abv.bg!");
+        //}
+
         [Test]
         [Property("Login", 2)]
         public void SuccessfullLogout()

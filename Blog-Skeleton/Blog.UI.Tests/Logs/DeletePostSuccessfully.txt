@@ -1,1 +1,1 @@
-Blog.UI.Tests.CreatePostTests.DeletePostSuccessfully        D:\Programming C#\SoftUni-QA-Blog\Blog-Skeleton\Blog.UI.Tests\bin\Debug            0
+Blog.UI.Tests.EditAndDeletePostTest.DeletePostSuccessfully        D:\Programming C#\SoftUni-QA-Blog\Blog-Skeleton\Blog.UI.Tests\bin\Debug            0

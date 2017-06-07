@@ -1,1 +1,1 @@
-Blog.UI.Tests.CreatePostTests.EditNewPostTitle        D:\Programming C#\SoftUni-QA-Blog\Blog-Skeleton\Blog.UI.Tests\bin\Debug            0
+Blog.UI.Tests.EditAndDeletePostTest.EditNewPostTitle        D:\Programming C#\SoftUni-QA-Blog\Blog-Skeleton\Blog.UI.Tests\bin\Debug            0
