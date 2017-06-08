@@ -41,6 +41,18 @@ namespace Blog.UI.Tests
         }
 
         [Test]
+        public void RegisterWithoutFullName()
+        {
+            var regPage = new RegistrationPage(this.driver);
+            User user = AccessExcelData.GetUserTestData("RegisterWithoutFullName");
+
+            regPage.NavigateTo();
+            regPage.FillRegistrationForm(user);
+
+            regPage.AssertErrorMessage("The Full Name field is required.");
+        }
+
+        [Test]
         public void RegisterWithoutEmail()
         {
             var regPage = new RegistrationPage(this.driver);
