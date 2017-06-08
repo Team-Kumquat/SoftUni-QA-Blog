@@ -46,5 +46,17 @@ namespace Blog.UI.Tests
 
             regPage.AssertErrorMessageConfPassword("The password and confirmation password do not match.");
         }
+
+        [Test]
+        public void PasswordsDontMatch()
+        {
+            var regPage = new RegistrationPage(BrowserHost.Instance.Application.Browser);
+            User user = AccessExcelData.GetUserTestData("PasswordsDontMatch");
+
+            regPage.NavigateTo();
+            regPage.FillRegistrationForm(user);
+
+            regPage.AssertErrorMessage("The password and confirmation password do not match.");
+        }
     }
 }
