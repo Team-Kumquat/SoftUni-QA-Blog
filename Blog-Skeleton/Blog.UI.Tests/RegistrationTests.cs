@@ -43,10 +43,9 @@ namespace Blog.UI.Tests
         }
 
         [Test]
-        [Property("UITest Register loaded", 1)]
-        [Author("S")]
+        [Property("UITest Register loaded", 1)]      
 
-        public void PostPageLoaded()
+        public void RegistrationPageLoaded()
         {
             var registrationPage = new RegistrationPage(this.driver);
             registrationPage.NavigateTo();
