@@ -34,5 +34,17 @@ namespace Blog.UI.Tests
 
             regPage.AssertErrorMessage("The Email field is required.");
         }
+
+        [Test]
+        public void RegisterWithoutConfirmPassword()
+        {
+            var regPage = new RegistrationPage(BrowserHost.Instance.Application.Browser);
+            User user = AccessExcelData.GetUserTestData("RegisterWithoutConfirmPassword");
+
+            regPage.NavigateTo();
+            regPage.FillRegistrationForm(user);
+
+            regPage.AssertErrorMessageConfPassword("The password and confirmation password do not match.");
+        }
     }
 }

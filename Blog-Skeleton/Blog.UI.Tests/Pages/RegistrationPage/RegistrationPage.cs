@@ -1,4 +1,5 @@
-﻿using Blog.UI.Tests.Models;
+﻿using System;
+using Blog.UI.Tests.Models;
 using OpenQA.Selenium;
 
 
@@ -31,7 +32,7 @@ namespace Blog.UI.Tests.Pages.RegistrationPage
         {
             element.Clear();
 
-            if (!text.Equals("String.Empty"))
+            if (!String.IsNullOrEmpty(text))
             {
                 element.SendKeys(text);
             }
