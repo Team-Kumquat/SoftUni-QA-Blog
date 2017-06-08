@@ -113,6 +113,7 @@ namespace Blog.UI.Tests
             regPage.AssertErrorMessage("The Email field is not a valid e-mail address.");
         }
 
+        //change the email in the excell file into DataDrivenTests folder
         [Test]
         public void RegisterWithFullNameWithNumbers()
         {
@@ -122,9 +123,10 @@ namespace Blog.UI.Tests
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);
         
-            regPage.AssertSuccessMessage("Hello 123@abv.bg!");
+            regPage.AssertSuccessMessage("Hello " + user.Email + "!");
         }
 
+        //change the email in the excell file into DataDrivenTests folder
         [Test]
         public void RegisterSuccessfull()
         {
@@ -134,7 +136,7 @@ namespace Blog.UI.Tests
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);
         
-            regPage.AssertSuccessMessage("Hello cvety@abv.bg!");
+            regPage.AssertSuccessMessage("Hello "+ user.Email + "!");
         }
 
         [Test]
