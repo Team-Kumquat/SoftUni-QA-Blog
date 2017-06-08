@@ -66,6 +66,18 @@ namespace Blog.UI.Tests
         }
 
         [Test]
+        public void RegisterWithoutPassword()
+        {
+            var regPage = new RegistrationPage(this.driver);
+            User user = AccessExcelData.GetUserTestData("RegisterWithoutPassword");
+
+            regPage.NavigateTo();
+            regPage.FillRegistrationForm(user);
+
+            regPage.AssertErrorMessage("The Password field is required.");
+        }
+
+        [Test]
         public void RegisterWithoutConfirmPassword()
         {
             var regPage = new RegistrationPage(this.driver);
