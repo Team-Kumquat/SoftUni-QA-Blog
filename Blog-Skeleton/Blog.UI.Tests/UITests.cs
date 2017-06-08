@@ -7,16 +7,33 @@ using System.Threading.Tasks;
 using Blog.UI.Tests.Pages.HomePage;
 using Blog.UI.Tests.Models;
 using Blog.UI.Tests.Pages.RegistrationPage;
+using OpenQA.Selenium;
 
 namespace Blog.UI.Tests
 {
     [TestFixture]
     public class UITests
     {
+
+        public IWebDriver driver;
+
+        [SetUp]
+        public void Init()
+        {
+            this.driver = BrowserHost.Instance.Application.Browser;
+            driver.Manage().Window.Maximize();
+        }
+
+        [TearDown]
+        public void CleanUp()
+        {
+            
+        }
+
         [Test]
         public void BlogLogoDisplayedRightMessage()
         {
-            var homePage = new HomePage(BrowserHost.Instance.Application.Browser);
+            var homePage = new HomePage(this.driver);
 
             homePage.NavigateTo();
 
@@ -26,19 +43,20 @@ namespace Blog.UI.Tests
         [Test]
         public void RegisterWithoutEmail()
         {
-            var regPage = new RegistrationPage(BrowserHost.Instance.Application.Browser);
+            var regPage = new RegistrationPage(this.driver);
             User user = AccessExcelData.GetUserTestData("RegisterWithoutEmail");
 
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);
 
+            //if all fields are empty, this test passed!
             regPage.AssertErrorMessage("The Email field is required.");
         }
 
         [Test]
         public void RegisterWithoutConfirmPassword()
         {
-            var regPage = new RegistrationPage(BrowserHost.Instance.Application.Browser);
+            var regPage = new RegistrationPage(this.driver);
             User user = AccessExcelData.GetUserTestData("RegisterWithoutConfirmPassword");
 
             regPage.NavigateTo();
@@ -50,7 +68,7 @@ namespace Blog.UI.Tests
         [Test]
         public void PasswordsDontMatch()
         {
-            var regPage = new RegistrationPage(BrowserHost.Instance.Application.Browser);
+            var regPage = new RegistrationPage(this.driver);
             User user = AccessExcelData.GetUserTestData("PasswordsDontMatch");
 
             regPage.NavigateTo();
@@ -62,7 +80,7 @@ namespace Blog.UI.Tests
         [Test]
         public void RegisterWithInvalidEmail()
         {
-            var regPage = new RegistrationPage(BrowserHost.Instance.Application.Browser);
+            var regPage = new RegistrationPage(this.driver);
             User user = AccessExcelData.GetUserTestData("RegisterWithInvalidEmail");
 
             regPage.NavigateTo();

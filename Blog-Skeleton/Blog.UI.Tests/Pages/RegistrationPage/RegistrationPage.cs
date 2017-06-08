@@ -36,6 +36,7 @@ namespace Blog.UI.Tests.Pages.RegistrationPage
             {
                 element.SendKeys(text);
             }
+            else element.Clear();
         }
     }
 }
