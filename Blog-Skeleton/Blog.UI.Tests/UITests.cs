@@ -58,5 +58,17 @@ namespace Blog.UI.Tests
 
             regPage.AssertErrorMessage("The password and confirmation password do not match.");
         }
+
+        [Test]
+        public void RegisterWithInvalidEmail()
+        {
+            var regPage = new RegistrationPage(BrowserHost.Instance.Application.Browser);
+            User user = AccessExcelData.GetUserTestData("RegisterWithInvalidEmail");
+
+            regPage.NavigateTo();
+            regPage.FillRegistrationForm(user);
+
+            regPage.AssertErrorMessage("The Email field is not a valid e-mail address.");
+        }
     }
 }
