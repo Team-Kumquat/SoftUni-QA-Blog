@@ -42,6 +42,18 @@ namespace Blog.UI.Tests
 
         }
 
+        [Test]
+        [Property("UITest Login loaded", 1)]
+        [Author("Rossen Dimov")]
+
+        public void LoginPageLoaded()
+        {
+            var loginPage = new LoginPage(this.driver);
+
+            loginPage.NavigateTo();
+
+            loginPage.AssertLoginPageIsLoaded("Log in");
+        }
 
         [Test]
         [Property("Login", 2)]

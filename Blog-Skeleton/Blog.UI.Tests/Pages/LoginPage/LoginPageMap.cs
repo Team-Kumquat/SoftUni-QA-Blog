@@ -60,6 +60,13 @@ namespace Blog.UI.Tests.Pages.LoginPage
             }
         }
 
+        public IWebElement Heading
+        {
+            get
+            {
+                return this.Driver.FindElement(By.XPath("/html/body/div[2]/div/div/h2"));
+            }
+        }
 
         public IWebElement SuccessLoginMessage
         {

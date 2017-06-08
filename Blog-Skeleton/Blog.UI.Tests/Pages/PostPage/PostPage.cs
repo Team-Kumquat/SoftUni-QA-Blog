@@ -10,10 +10,17 @@ namespace Blog.UI.Tests.Pages.PostPage
             : base(driver)
         {
         }
+        public string URL
+        {
+            get
+            {
+                return base.url + "Article/Create";
+            }
+        }
 
         public void NavigateTo()
         {
-            this.Driver.Navigate().GoToUrl("http://localhost:60634/Article/Create");
+            this.Driver.Navigate().GoToUrl(this.URL);
         }
 
         public void FillPostForm(Post post)

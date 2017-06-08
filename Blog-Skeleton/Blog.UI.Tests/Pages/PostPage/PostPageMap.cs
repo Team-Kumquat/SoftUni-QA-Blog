@@ -6,6 +6,13 @@ namespace Blog.UI.Tests.Pages.PostPage
 {
     public partial class PostPage
     {
+        public IWebElement Heading
+        {
+            get
+            {
+                return this.Driver.FindElement(By.XPath("/html/body/div[2]/div/div/h2"));
+            }
+        }
 
         public IWebElement Title
         {

@@ -13,5 +13,11 @@ namespace Blog.UI.Tests.Pages.HomePage
         {
             Assert.AreEqual("SOFTUNI BLOG", page.Logo.Text);
         }
+        public static void AssertIsLogged(this HomePage page, string text)
+        {
+            Assert.IsTrue(page.GreatingLink.Displayed);
+        }
+
+      
     }
 }
