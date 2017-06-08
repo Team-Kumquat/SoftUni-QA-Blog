@@ -52,8 +52,7 @@ namespace Blog.UI.Tests
 
         [Test]
         [Property("UITest Create Article loaded", 1)]
-        [Author("S")]
-
+       
         public void PostPageLoaded()
         {
             var postPage = new PostPage(this.driver);

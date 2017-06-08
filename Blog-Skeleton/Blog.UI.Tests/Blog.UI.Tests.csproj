@@ -147,11 +147,18 @@
     <Compile Include="BlogSmokeTests.cs" />
     <Compile Include="BrowserHost.cs" />
     <Compile Include="CreatePostTests.cs" />
+    <Compile Include="EditAndDeleteUserTest.cs" />
     <Compile Include="EditAndDeletePostTest.cs" />
     <Compile Include="Models\AccessExcelData.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Pages\BasePage.cs" />
+    <Compile Include="Pages\DeleteUserPage\DeleteUserPageMap.cs" />
+    <Compile Include="Pages\DeleteUserPage\DeleteUserPage.cs" />
+    <Compile Include="Pages\DeleteUserPage\DeleteUserPageAsserts.cs" />
+    <Compile Include="Pages\EditUserPage\EditUserPage.cs" />
+    <Compile Include="Pages\EditUserPage\EditUserPageAsserter.cs" />
+    <Compile Include="Pages\EditUserPage\EditUserPageMap.cs" />
     <Compile Include="Pages\HomePage\HomePage.cs" />
     <Compile Include="Pages\HomePage\HomePageAsserter.cs" />
     <Compile Include="Pages\HomePage\HomePageMap.cs" />
@@ -165,6 +172,9 @@
     <Compile Include="Pages\RegistrationPage\RegistrationPage.cs" />
     <Compile Include="Pages\RegistrationPage\RegistrationPageAsserter.cs" />
     <Compile Include="Pages\RegistrationPage\RegistrationPageMap.cs" />
+    <Compile Include="Pages\UserListPage\UserListPage.cs" />
+    <Compile Include="Pages\UserListPage\UserListPageAsserter.cs" />
+    <Compile Include="Pages\UserListPage\UserListPageMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrationTests.cs" />
   </ItemGroup>
@@ -172,10 +182,10 @@
     <None Include="app.config" />
     <None Include="DataDrivenTests\UserData.xlsx" />
     <None Include="DataDrivenTests\~%24UserData.xlsx" />
-    <None Include="LoginPlaylist.playlist" />
+    <None Include="Playlists\LoginPlaylist.playlist" />
     <None Include="packages.config" />
-    <None Include="PostCRUD.playlist" />
-    <None Include="Registration.playlist" />
+    <None Include="Playlists\PostCRUD.playlist" />
+    <None Include="Playlists\Registration.playlist" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

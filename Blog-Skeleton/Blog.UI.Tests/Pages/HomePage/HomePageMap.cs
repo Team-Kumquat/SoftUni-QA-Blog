@@ -24,7 +24,14 @@ namespace Blog.UI.Tests.Pages.HomePage
                 return this.Wait.Until(w => w.FindElement(By.Id("loginLink")));
             }
         }
-            
+
+        public IWebElement Logoff
+        {
+            get
+            {
+                return this.Wait.Until(w => w.FindElement(By.CssSelector("#logoutForm > ul > li:nth-child(3) > a")));
+            }
+        }
         public IWebElement Register
         {
             get
