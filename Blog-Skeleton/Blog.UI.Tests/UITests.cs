@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Blog.UI.Tests.Pages.HomePage;
+using Blog.UI.Tests.Models;
+using Blog.UI.Tests.Pages.RegistrationPage;
 
 namespace Blog.UI.Tests
 {
@@ -19,6 +21,18 @@ namespace Blog.UI.Tests
             homePage.NavigateTo();
 
             homePage.AssertLogo();
+        }
+
+        [Test]
+        public void RegisterWithoutEmail()
+        {
+            var regPage = new RegistrationPage(BrowserHost.Instance.Application.Browser);
+            User user = AccessExcelData.GetUserTestData("RegisterWithoutEmail");
+
+            regPage.NavigateTo();
+            regPage.FillRegistrationForm(user);
+
+            regPage.AssertErrorMessage("The Email field is required.");
         }
     }
 }
