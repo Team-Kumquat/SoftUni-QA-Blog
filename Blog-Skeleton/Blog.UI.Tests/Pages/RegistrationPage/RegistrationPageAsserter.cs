@@ -24,14 +24,14 @@ namespace Blog.UI.Tests.Pages.RegistrationPage
         public static void AssertErrorMessage(this RegistrationPage page, string text)
         {
             Assert.IsTrue(page.ErrorMessages.Displayed);
-            StringAssert.Contains(text, page.ErrorMessages.Text);
+            Assert.AreEqual(text, page.ErrorMessages.Text);
         }
 
 
         public static void AssertErrorMessageConfPassword(this RegistrationPage page, string text)
         {
             Assert.IsTrue(page.ErrorMessagesComfPassword.Displayed);
-            StringAssert.Contains(text, page.ErrorMessagesComfPassword.Text);
+            Assert.AreEqual(text, page.ErrorMessagesComfPassword.Text);
         }
 
     }

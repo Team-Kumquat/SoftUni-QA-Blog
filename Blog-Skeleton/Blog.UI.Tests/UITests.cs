@@ -119,7 +119,7 @@ namespace Blog.UI.Tests
         {
             var regPage = new RegistrationPage(this.driver);
             User user = AccessExcelData.GetUserTestData("RegisterWithFullNameWithNumbers");
-        
+
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);
         
