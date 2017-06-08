@@ -15,5 +15,10 @@ namespace Blog.UI.Tests.Pages.PostPage
             StringAssert.Contains(text, page.ErrorMessage.Text);
         }
 
+        public static void AssertPostPageIsLoaded(this PostPage page, string text)
+        {
+            Assert.AreEqual(text, page.Heading.Text);
+        }
+
     }
 }

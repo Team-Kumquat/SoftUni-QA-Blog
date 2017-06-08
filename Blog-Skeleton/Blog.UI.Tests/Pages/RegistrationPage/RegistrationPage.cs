@@ -11,9 +11,16 @@ namespace Blog.UI.Tests.Pages.RegistrationPage
         {
         }
 
+        public string URL
+        {
+            get
+            {
+                return base.url + "Account/Register";
+            }
+        }
         public void NavigateTo()
         {
-            this.Driver.Navigate().GoToUrl("http://localhost:60634/Account/Register");
+            this.Driver.Navigate().GoToUrl(this.URL);
         }
 
         public void FillRegistrationForm(User user)

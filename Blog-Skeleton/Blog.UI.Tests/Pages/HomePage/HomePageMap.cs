@@ -32,5 +32,16 @@ namespace Blog.UI.Tests.Pages.HomePage
                 return this.Wait.Until(w => w.FindElement(By.Id("registerLink")));
             }
         }
+
+        public IWebElement GreatingLink
+        {
+            get
+            {
+                return this.Driver.FindElement(By.XPath("//*[@id=\"logoutForm\"]/ul/li[2]/a"));
+            }
+
+        }
+
+       
     }
 }

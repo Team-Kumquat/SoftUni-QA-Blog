@@ -34,5 +34,9 @@ namespace Blog.UI.Tests.Pages.RegistrationPage
             StringAssert.Contains(text, page.ErrorMessagesComfPassword.Text);
         }
 
+        public static void AssertRegisterPageIsLoaded(this RegistrationPage page, string text)
+        {
+            Assert.AreEqual(text, page.Heading.Text);
+        }
     }
 }

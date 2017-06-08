@@ -172,7 +172,10 @@
     <None Include="app.config" />
     <None Include="DataDrivenTests\UserData.xlsx" />
     <None Include="DataDrivenTests\~%24UserData.xlsx" />
+    <None Include="LoginPlaylist.playlist" />
     <None Include="packages.config" />
+    <None Include="PostCRUD.playlist" />
+    <None Include="Registration.playlist" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

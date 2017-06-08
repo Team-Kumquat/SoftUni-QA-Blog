@@ -11,9 +11,17 @@ namespace Blog.UI.Tests.Pages.LoginPage
         {
         }
 
+        public string URL
+        {
+            get
+            {
+                return base.url + "Account/Login";
+            }
+        }
+
         public void NavigateTo()
         {
-            this.Driver.Navigate().GoToUrl("http://localhost:60634/Account/Login");
+            this.Driver.Navigate().GoToUrl(this.URL);
         }
 
         public void FillLoginForm(User user)

@@ -39,5 +39,10 @@ namespace Blog.UI.Tests.Pages.LoginPage
             StringAssert.Contains(text, page.ErrorMessageInvalidUser.Text);
         }
 
+        public static void AssertLoginPageIsLoaded(this LoginPage page, string text)
+        {
+            Assert.AreEqual(text, page.Heading.Text);
+        }
+
     }
 }

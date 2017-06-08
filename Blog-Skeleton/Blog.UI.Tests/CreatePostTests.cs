@@ -7,6 +7,7 @@ using Configuration;
 using Blog.UI.Tests.Pages.PostPage;
 using Blog.UI.Tests.Models;
 using Blog.UI.Tests.Pages.LoginPage;
+using Blog.UI.Tests.Pages.HomePage;
 
 namespace Blog.UI.Tests
 {
@@ -49,6 +50,17 @@ namespace Blog.UI.Tests
 
         }
 
+        [Test]
+        [Property("UITest Create Article loaded", 1)]
+        [Author("S")]
+
+        public void PostPageLoaded()
+        {
+            var postPage = new PostPage(this.driver);
+            postPage.NavigateTo();
+
+            postPage.AssertPostPageIsLoaded("Create Article");
+        }
 
         [Test]
         [Property("CreatePost", 3)]
