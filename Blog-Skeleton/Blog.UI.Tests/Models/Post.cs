@@ -2,9 +2,9 @@
 {
     public class Post
     {
-
-        private string title;
-        private string content;
+        //default values in case setter are omitted by the data access layer
+        private string title = "";
+        private string content = "";
 
 
         public Post()
@@ -15,7 +15,8 @@
         public string Title
         {
             get { return this.title; }
-            set { this.title = value; }
+            set
+            { this.title = value; }
         }
 
 

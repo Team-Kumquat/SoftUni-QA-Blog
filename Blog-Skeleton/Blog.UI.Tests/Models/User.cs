@@ -5,11 +5,13 @@ namespace Blog.UI.Tests.Models
 {
     public class User
     {
-        
-        private string fullName;
-        private string email;
-        private string password;
-        private string confirmPassword;
+        //default values in case setter are omitted by the data access layer
+        private string fullName = "";
+        private string email = "";
+        private string password = "";
+        private string confirmPassword = "";
+        private bool isAdmin=false;
+        private bool isUser=true;
 
         public User()
         {
@@ -22,13 +24,13 @@ namespace Blog.UI.Tests.Models
             set { this.email = value; }
         }
 
-		
+
         public string FullName
         {
             get { return this.fullName; }
             set { this.fullName = value; }
         }
-    
+
 
         public string Password
         {
@@ -40,6 +42,18 @@ namespace Blog.UI.Tests.Models
         {
             get { return this.confirmPassword; }
             set { this.confirmPassword = value; }
+        }
+
+        public bool IsAdmin
+        {
+            get { return this.isAdmin; }
+            set { this.isAdmin = value; }
+        }
+
+        public bool IsUser
+        {
+            get { return this.isUser; }
+            set { this.isUser = value; }
         }
     }
 }

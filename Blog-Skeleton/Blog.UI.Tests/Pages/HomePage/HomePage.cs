@@ -10,7 +10,7 @@ namespace Blog.UI.Tests.Pages.HomePage
 {
     public partial class HomePage : BasePage
     {
-        private IWebDriver driver;
+        //private IWebDriver driver;
         private WebDriverWait wait;
         // private string url = @"http://localhost:60634/Article/List";
 
