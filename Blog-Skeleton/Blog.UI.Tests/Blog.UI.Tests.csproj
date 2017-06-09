@@ -136,6 +136,10 @@
   <ItemGroup>
     <Folder Include="DataDrivenTests\" />
     <Folder Include="Logs\" />
+    <Folder Include="Pages\DeleteUserPage\" />
+    <Folder Include="Pages\EditUserPage\" />
+    <Folder Include="Pages\PostPage\" />
+    <Folder Include="Pages\UserListPage\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Selenium.Chrome.WebDriver.2.29\build\Selenium.Chrome.WebDriver.targets" Condition="Exists('..\packages\Selenium.Chrome.WebDriver.2.29\build\Selenium.Chrome.WebDriver.targets')" />
