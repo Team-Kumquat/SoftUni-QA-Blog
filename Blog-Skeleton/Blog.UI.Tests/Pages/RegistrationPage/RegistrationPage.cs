@@ -20,6 +20,8 @@ namespace Blog.UI.Tests.Pages.RegistrationPage
             }
         }
 
+        public string UniqueMail = TestDataHelper.GenerateEmailAddress();
+
         public void NavigateTo()
         {
             this.Driver.Navigate().GoToUrl(this.URL);
@@ -34,7 +36,14 @@ namespace Blog.UI.Tests.Pages.RegistrationPage
             this.SubmitButton.Click();
         }
 
-
+        public void FillRegistrationFormWithUniqueEmail(User user)
+        {
+            Type(this.Email, UniqueMail);
+            Type(this.FullName, user.FullName);
+            Type(this.Password, user.Password);
+            Type(this.ConfirmPassword, user.ConfirmPassword);
+            this.SubmitButton.Click();
+        }
 
         private void Type(IWebElement element, string text)
         {

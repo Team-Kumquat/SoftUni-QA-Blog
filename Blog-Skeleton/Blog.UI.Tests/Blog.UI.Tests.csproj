@@ -111,6 +111,7 @@
     <Compile Include="BrowserHost.cs" />
     <Compile Include="Models\AccessExcelData.cs" />
     <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\TestDataHelper.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Pages\HomePage\HomePage.cs" />

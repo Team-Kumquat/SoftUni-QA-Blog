@@ -9,6 +9,7 @@ using Blog.UI.Tests.Models;
 using Blog.UI.Tests.Pages.RegistrationPage;
 using OpenQA.Selenium;
 using Blog.UI.Tests.Pages.LoginPage;
+using Blog.UI.Tests.Models;
 
 namespace Blog.UI.Tests
 {
@@ -120,6 +121,7 @@ namespace Blog.UI.Tests
         {
             var regPage = new RegistrationPage(this.driver);
             User user = AccessExcelData.GetUserTestData("RegisterWithFullNameWithNumbers");
+            user.Email = regPage.UniqueMail;
 
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);
@@ -133,11 +135,12 @@ namespace Blog.UI.Tests
         {
             var regPage = new RegistrationPage(this.driver);
             User user = AccessExcelData.GetUserTestData("RegisterSuccessfull");
+            user.Email = regPage.UniqueMail;
         
             regPage.NavigateTo();
-            regPage.FillRegistrationForm(user);
+            regPage.FillRegistrationFormWithUniqueEmail(user);
         
-            regPage.AssertSuccessMessage("Hello "+ user.Email + "!");
+            regPage.AssertSuccessMessage("Hello " + user.Email + "!");
         }
 
         [Test]
