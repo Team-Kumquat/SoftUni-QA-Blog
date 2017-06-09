@@ -16,20 +16,21 @@ namespace Blog.UI.Tests
     [TestFixture]
     public class UITests
     {
-
         public IWebDriver driver;
+
 
         [SetUp]
         public void Init()
         {
-            this.driver = BrowserHost.Instance.Application.Browser;
+            
+            driver = BrowserHost.Instance.Application.Browser;
             driver.Manage().Window.Maximize();
         }
 
         [TearDown]
         public void CleanUp()
         {
-            
+
         }
 
         [Test]

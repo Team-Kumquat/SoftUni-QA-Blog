@@ -48,10 +48,11 @@ namespace Blog.UI.Tests.Pages.DeleteUserPage
         {
             element.Clear();
 
-            if (!text.Equals("String.Empty"))
+            if (!String.IsNullOrEmpty(text))
             {
                 element.SendKeys(text);
             }
+            else element.Clear();
         }
     }
 }
