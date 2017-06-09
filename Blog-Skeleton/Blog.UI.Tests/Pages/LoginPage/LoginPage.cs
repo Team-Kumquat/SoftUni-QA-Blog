@@ -3,11 +3,11 @@ using Blog.UI.Tests.Models;
 using OpenQA.Selenium;
 
 
-namespace Blog.UI.Tests.Pages.RegistrationPage
+namespace Blog.UI.Tests.Pages.LoginPage
 {
-    public partial class RegistrationPage : BasePage
+    public partial class LoginPage : BasePage
     {
-        public RegistrationPage(IWebDriver driver)
+        public LoginPage(IWebDriver driver)
             : base(driver)
         {
         }
@@ -16,7 +16,7 @@ namespace Blog.UI.Tests.Pages.RegistrationPage
         {
             get
             {
-                return base.url + "Article/Register";
+                return base.url + "Account/Login";
             }
         }
 
@@ -25,15 +25,19 @@ namespace Blog.UI.Tests.Pages.RegistrationPage
             this.Driver.Navigate().GoToUrl(this.URL);
         }
 
-        public void FillRegistrationForm(User user)
+        public void FillLoginForm(User user)
         {
             Type(this.Email, user.Email);
-            Type(this.FullName, user.FullName);
             Type(this.Password, user.Password);
-            Type(this.ConfirmPassword, user.ConfirmPassword);
-            this.SubmitButton.Click();
+            this.RememberCheckbox.Click();
+            this.LoginButton.Click();
         }
 
+
+        public void Logout()
+        {
+            this.LogoutButton.Click();
+        }
 
 
         private void Type(IWebElement element, string text)

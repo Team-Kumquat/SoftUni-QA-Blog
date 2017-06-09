@@ -8,6 +8,7 @@ using Blog.UI.Tests.Pages.HomePage;
 using Blog.UI.Tests.Models;
 using Blog.UI.Tests.Pages.RegistrationPage;
 using OpenQA.Selenium;
+using Blog.UI.Tests.Pages.LoginPage;
 
 namespace Blog.UI.Tests
 {
@@ -149,6 +150,40 @@ namespace Blog.UI.Tests
             regPage.FillRegistrationForm(user);
 
             regPage.AssertErrorMessage("The field Full Name must be a string with a maximum length of 50.");
+        }
+
+        [Test]
+        public void LoginPageLoaded()
+        {
+            var loginPage = new LoginPage(this.driver);
+
+            loginPage.NavigateTo();
+
+            loginPage.AssertLoginPageIsLoaded("Log in");
+        }
+
+        [Test]
+        public void LoginWithoutEmail()
+        {
+            var logPage = new LoginPage(this.driver);
+            User user = AccessExcelData.GetUserTestData("LoginWithoutEmail");
+
+            logPage.NavigateTo();
+            logPage.FillLoginForm(user);
+
+            logPage.AssertErrorMessageForEmail("The Email field is required.");
+        }
+
+        [Test]
+        public void LoginWithoutPassword()
+        {
+            var logPage = new LoginPage(this.driver);
+            User user = AccessExcelData.GetUserTestData("LoginWithoutPassword");
+
+            logPage.NavigateTo();
+            logPage.FillLoginForm(user);
+
+            logPage.AssertErrorMessageEmptyPassword("The Password field is required.");
         }
     }
 }
