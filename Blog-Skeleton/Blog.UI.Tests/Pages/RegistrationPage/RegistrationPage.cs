@@ -16,7 +16,7 @@ namespace Blog.UI.Tests.Pages.RegistrationPage
         {
             get
             {
-                return base.url + "Article/Register";
+                return base.url + "Account/Register";
             }
         }
 
