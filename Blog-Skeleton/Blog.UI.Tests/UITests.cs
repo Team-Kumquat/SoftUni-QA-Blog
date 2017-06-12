@@ -9,7 +9,6 @@ using Blog.UI.Tests.Models;
 using Blog.UI.Tests.Pages.RegistrationPage;
 using OpenQA.Selenium;
 using Blog.UI.Tests.Pages.LoginPage;
-using Blog.UI.Tests.Models;
 
 namespace Blog.UI.Tests
 {
@@ -23,7 +22,7 @@ namespace Blog.UI.Tests
         public void Init()
         {
             
-            driver = BrowserHost.Instance.Application.Browser;
+            this.driver = BrowserHost.Instance.Application.Browser;
             driver.Manage().Window.Maximize();
         }
 
@@ -47,7 +46,7 @@ namespace Blog.UI.Tests
         public void RegisterWithoutFullName()
         {
             var regPage = new RegistrationPage(this.driver);
-            User user = AccessExcelData.GetUserTestData("RegisterWithoutFullName");
+            User user = AccessExcelData<User>.GetTestData("UserDataSet", "RegisterWithoutFullName");
 
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);
@@ -59,7 +58,7 @@ namespace Blog.UI.Tests
         public void RegisterWithoutEmail()
         {
             var regPage = new RegistrationPage(this.driver);
-            User user = AccessExcelData.GetUserTestData("RegisterWithoutEmail");
+            User user = AccessExcelData<User>.GetTestData("UserDataSet", "RegisterWithoutEmail");
 
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);
@@ -72,7 +71,7 @@ namespace Blog.UI.Tests
         public void RegisterWithoutPassword()
         {
             var regPage = new RegistrationPage(this.driver);
-            User user = AccessExcelData.GetUserTestData("RegisterWithoutPassword");
+            User user = AccessExcelData<User>.GetTestData("UserDataSet", "RegisterWithoutPassword");
 
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);
@@ -84,7 +83,7 @@ namespace Blog.UI.Tests
         public void RegisterWithoutConfirmPassword()
         {
             var regPage = new RegistrationPage(this.driver);
-            User user = AccessExcelData.GetUserTestData("RegisterWithoutConfirmPassword");
+            User user = AccessExcelData<User>.GetTestData("UserDataSet", "RegisterWithoutConfirmPassword");
 
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);
@@ -96,7 +95,7 @@ namespace Blog.UI.Tests
         public void PasswordsDontMatch()
         {
             var regPage = new RegistrationPage(this.driver);
-            User user = AccessExcelData.GetUserTestData("PasswordsDontMatch");
+            User user = AccessExcelData<User>.GetTestData("UserDataSet", "PasswordsDontMatch");
 
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);
@@ -108,7 +107,7 @@ namespace Blog.UI.Tests
         public void RegisterWithInvalidEmail()
         {
             var regPage = new RegistrationPage(this.driver);
-            User user = AccessExcelData.GetUserTestData("RegisterWithInvalidEmail");
+            User user = AccessExcelData<User>.GetTestData("UserDataSet", "RegisterWithInvalidEmail");
 
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);
@@ -116,12 +115,11 @@ namespace Blog.UI.Tests
             regPage.AssertErrorMessage("The Email field is not a valid e-mail address.");
         }
 
-        //change the email in the excell file into DataDrivenTests folder
         [Test]
         public void RegisterWithFullNameWithNumbers()
         {
             var regPage = new RegistrationPage(this.driver);
-            User user = AccessExcelData.GetUserTestData("RegisterWithFullNameWithNumbers");
+            User user = AccessExcelData<User>.GetTestData("UserDataSet", "RegisterWithFullNameWithNumbers");
             user.Email = regPage.UniqueMail;
 
             regPage.NavigateTo();
@@ -130,12 +128,11 @@ namespace Blog.UI.Tests
             regPage.AssertSuccessMessage("Hello " + user.Email + "!");
         }
 
-        //change the email in the excell file into DataDrivenTests folder
         [Test]
         public void RegisterSuccessfull()
         {
             var regPage = new RegistrationPage(this.driver);
-            User user = AccessExcelData.GetUserTestData("RegisterSuccessfull");
+            User user = AccessExcelData<User>.GetTestData("UserDataSet", "RegisterSuccessfull");
             user.Email = regPage.UniqueMail;
         
             regPage.NavigateTo();
@@ -148,7 +145,7 @@ namespace Blog.UI.Tests
         public void RegisterWithLongFullName()
         {
             var regPage = new RegistrationPage(this.driver);
-            User user = AccessExcelData.GetUserTestData("RegisterWithLongFullName");
+            User user = AccessExcelData<User>.GetTestData("UserDataSet", "RegisterWithLongFullName");
 
             regPage.NavigateTo();
             regPage.FillRegistrationForm(user);
@@ -170,7 +167,7 @@ namespace Blog.UI.Tests
         public void LoginWithoutEmail()
         {
             var logPage = new LoginPage(this.driver);
-            User user = AccessExcelData.GetUserTestData("LoginWithoutEmail");
+            User user = AccessExcelData<User>.GetTestData("UserDataSet", "LoginWithoutEmail");
 
             logPage.NavigateTo();
             logPage.FillLoginForm(user);
@@ -182,7 +179,7 @@ namespace Blog.UI.Tests
         public void LoginWithoutPassword()
         {
             var logPage = new LoginPage(this.driver);
-            User user = AccessExcelData.GetUserTestData("LoginWithoutPassword");
+            User user = AccessExcelData<User>.GetTestData("UserDataSet", "LoginWithoutPassword");
 
             logPage.NavigateTo();
             logPage.FillLoginForm(user);
