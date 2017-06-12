@@ -9,6 +9,9 @@ using Blog.UI.Tests.Models;
 using Blog.UI.Tests.Pages.RegistrationPage;
 using OpenQA.Selenium;
 using Blog.UI.Tests.Pages.LoginPage;
+using NUnit.Framework.Interfaces;
+using Configuration;
+using System.IO;
 
 namespace Blog.UI.Tests
 {
@@ -21,7 +24,6 @@ namespace Blog.UI.Tests
         [SetUp]
         public void Init()
         {
-            
             this.driver = BrowserHost.Instance.Application.Browser;
             driver.Manage().Window.Maximize();
         }
@@ -29,6 +31,32 @@ namespace Blog.UI.Tests
         [TearDown]
         public void CleanUp()
         {
+            var path = ConfigurationManager.AppSettings["Logs"];
+
+            //get the full path to this.project dll. See App.config for more
+            var relativePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+
+            var pathToLogs = string.Format(System.IO.Path.Combine(relativePath.Replace("\\bin\\Debug\\Blog.UI.Tests.dll", String.Empty)
+                                      .ToString(), path));
+
+            if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
+            {
+                string filename = pathToLogs + TestContext.CurrentContext.Test.Name + ".txt";
+                if (File.Exists(filename))
+                {
+                    File.Delete(filename);
+                }
+                File.WriteAllText(filename, TestContext.CurrentContext.Test.FullName 
+                    + "        " 
+                    + TestContext.CurrentContext.WorkDirectory 
+                    + "            " 
+                    + TestContext.CurrentContext.Result.PassCount 
+                    + "            " 
+                    + TestContext.CurrentContext.Result.Message);
+
+                var screenshot = ((ITakesScreenshot)this.driver).GetScreenshot();
+                screenshot.SaveAsFile(filename + TestContext.CurrentContext.Test.Name + ".jpg", ScreenshotImageFormat.Jpeg);
+            }
 
         }
 

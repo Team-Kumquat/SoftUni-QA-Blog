@@ -15,12 +15,12 @@ namespace Blog.UI.Tests.Models
         {
             var path = ConfigurationManager.AppSettings["TestDataSheetPath"];
             //get the full path to this.project dll. See App.config for more
-            var relativepath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            var relativePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
             //replace the path to point to the excell databind
             pathToExcel = string.Format(@"Provider=Microsoft.ACE.OLEDB.12.0;
 		                              Data Source = {0}; 
 		                              Extended Properties=Excel 12.0;", 
-                                      System.IO.Path.Combine(relativepath.Replace("\\bin\\Debug\\Blog.UI.Tests.dll", String.Empty)
+                                      System.IO.Path.Combine(relativePath.Replace("\\bin\\Debug\\Blog.UI.Tests.dll", String.Empty)
                                       .ToString(), path));
             return pathToExcel;
         }

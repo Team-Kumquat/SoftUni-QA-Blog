@@ -140,6 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataDrivenTests\" />
+    <Folder Include="Logs\" />
     <Folder Include="Pages\EditUserPage\" />
     <Folder Include="Pages\PostPage\" />
     <Folder Include="Pages\UserListPage\" />

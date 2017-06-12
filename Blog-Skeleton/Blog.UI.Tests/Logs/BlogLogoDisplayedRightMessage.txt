@@ -1,0 +1,4 @@
+Blog.UI.Tests.UITests.BlogLogoDisplayedRightMessage        C:\Users\Velizar Valkov\Documents\GitHub\SoftUni-QA-Blog\Blog-Skeleton\Blog.UI.Tests\bin\Debug            0              Expected string length 17 but was 12. Strings differ at index 12.
+  Expected: "SOFTUNI BLOG fail"
+  But was:  "SOFTUNI BLOG"
+  -----------------------^
